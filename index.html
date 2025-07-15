@@ -1,4 +1,6 @@
-html lang="en">
+<!-- SOLD OUT VERSION (Mobile Responsive) -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -6,22 +8,38 @@ html lang="en">
   <style>
     body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
     header { background: #111; color: white; padding: 1rem; text-align: center; }
-    .container { padding: 2rem; max-width: 1200px; margin: auto; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2rem; }
-    .product { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .product img { width: 100%; border-radius: 10px; }
-    .product h3 { margin: 0.5rem 0; }
-    .product button { padding: 0.5rem 1rem; background: #111; color: white; border: none; cursor: pointer; }
-    .cart-btn, .submit-btn { background: #007bff; margin-top: 1rem; padding: 0.5rem 1rem; border: none; color: white; cursor: pointer; }
+    .container { padding: 1rem; max-width: 1200px; margin: auto; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .product { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); opacity: 0.6; }
+    .product img { width: 100%; height: auto; border-radius: 10px; }
+    .product h3 { margin: 0.5rem 0; font-size: 1rem; }
+    .product p { margin: 0.2rem 0; font-size: 0.9rem; }
+    .product button { width: 100%; padding: 0.5rem; background: gray; color: white; border: none; cursor: not-allowed; font-size: 1rem; }
+    .cart-btn, .submit-btn { background: #007bff; margin-top: 1rem; padding: 0.5rem 1rem; border: none; color: white; cursor: pointer; width: 100%; }
     form { margin-top: 2rem; background: white; padding: 1rem; border-radius: 10px; }
-    input, textarea { width: 100%; padding: 0.5rem; margin: 0.5rem 0; }
+    input, textarea, select { width: 100%; padding: 0.5rem; margin: 0.5rem 0; font-size: 1rem; }
+    .section { margin-top: 3rem; text-align: center; }
+    .gallery { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+    .gallery img { width: 100%; max-width: 200px; border-radius: 10px; }
+    .faq { text-align: left; max-width: 600px; margin: 2rem auto; background: #fff; padding: 1rem; border-radius: 10px; }
+    .faq h3 { margin-top: 1rem; }
+    .restock-form { background: #fff; padding: 1rem; border-radius: 10px; max-width: 500px; margin: 2rem auto; text-align: left; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .product-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Trendora</h1>
     <p>Premium iPhone Cases for iPhone 12 to 16</p>
-    <p>Contact: 0585607799 | Email: tamimgamil100@gmail.com</p>
+    <p><strong>All cases are currently SOLD OUT</strong></p>
+    <p><strong>🚚 Delivery Time:</strong> 1–2 days within Dubai</p>
+    <p><strong>🔔 247 people already signed up to be notified!</strong></p>
+    <p>New stock coming soon! Follow us on Instagram: <a href="https://instagram.com/trendora.dubai" target="_blank" style="color:#0af">@trendora.dubai</a></p>
+    <p>Contact: 0585607799 | Email: tamimgamil100@gmail.com | WhatsApp: 0585607799 (for info only)</p>
+    <p><strong>Follow us:</strong> <a href="https://instagram.com/trendora.dubai" target="_blank" style="color:#0af">@trendora.dubai</a></p>
   </header>
 
   <div class="container">
@@ -29,91 +47,12 @@ html lang="en">
       <div class="product">
         <img src="https://via.placeholder.com/200x250?text=iPhone+12+Case" alt="iPhone 12 Case">
         <h3>iPhone 12 Case</h3>
-        <button onclick="addToCart('iPhone 12 Case')">Add to Cart</button>
+        <p>Normal - AED 20</p>
+        <p>Color: White only</p>
+        <button disabled>Sold Out</button>
       </div>
       <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=iPhone+13+Case" alt="iPhone 13 Case">
-        <h3>iPhone 13 Case</h3>
-        <button onclick="addToCart('iPhone 13 Case')">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=iPhone+14+Case" alt="iPhone 14 Case">
-        <h3>iPhone 14 Case</h3>
-        <button onclick="addToCart('iPhone 14 Case')">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=iPhone+15+Case" alt="iPhone 15 Case">
-        <h3>iPhone 15 Case</h3>
-        <button onclick="addToCart('iPhone 15 Case')">Add to Cart</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250?text=iPhone+16+Case" alt="iPhone 16 Case">
-        <h3>iPhone 16 Case</h3>
-        <button onclick="addToCart('iPhone 16 Case')">Add to Cart</button>
-      </div>
-    </div>
-
-    <h2>Cart</h2>
-    <ul id="cart"></ul>
-
-    <form id="orderForm">
-      <h2>Delivery Info (Dubai only)</h2>
-      <label>Name:</label>
-      <input type="text" name="name" required />
-
-      <label>Phone Number:</label>
-      <input type="text" name="phone" required />
-
-      <label>Address in Dubai:</label>
-      <textarea name="address" required></textarea>
-
-      <label>Map (Optional):</label>
-      <input type="text" name="map" placeholder="Paste Google Map link" />
-
-      <button type="submit" class="submit-btn">Submit Order</button>
-    </form>
-  </div>
-
-  <script>
-    const cart = [];
-    function addToCart(item) {
-      cart.push(item);
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartList = document.getElementById("cart");
-      cartList.innerHTML = "";
-      cart.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        cartList.appendChild(li);
-      });
-    }
-
-    document.getElementById("orderForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const data = new FormData(this);
-      const customerInfo = {
-        name: data.get("name"),
-        phone: data.get("phone"),
-        address: data.get("address"),
-        map: data.get("map"),
-        cart: cart
-      };
-
-      const emailContent = `New Order from Trendora:%0A%0A` +
-        `Name: ${customerInfo.name}%0A` +
-        `Phone: ${customerInfo.phone}%0A` +
-        `Address: ${customerInfo.address}%0A` +
-        `Map: ${customerInfo.map}%0A` +
-        `Cart: ${customerInfo.cart.join(", ")}`;
-
-      const mailtoLink = `mailto:tamimgamil100@gmail.com?subject=New%20Order%20from%20Trendora&body=${emailContent}`;
-
-      window.location.href = mailtoLink;
-    });
-  </script>
-</body>
-</html>
+        <img src="https://via.placeholder.com/200x250?text=iPhone+13+Pro+Case" alt="iPhone 13 Pro Case">
+        <h3>iPhone 13 Pro Case</h3>
+        <p>Pro - AED 25</p>
+        <p>Color: White only</p>
