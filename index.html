@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Trendora - iPhone Cases</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
@@ -14,19 +14,19 @@
     .product h3 { margin: 0.5rem 0; font-size: 1rem; }
     .product p { margin: 0.2rem 0; font-size: 0.9rem; }
     .product button { width: 100%; padding: 0.5rem; background: gray; color: white; border: none; cursor: not-allowed; font-size: 1rem; }
-    .cart-btn, .submit-btn { background: #007bff; margin-top: 1rem; padding: 0.5rem 1rem; border: none; color: white; cursor: pointer; width: 100%; }
-    form { margin-top: 2rem; background: white; padding: 1rem; border-radius: 10px; }
+    form { margin-top: 2rem; background: white; padding: 1rem; border-radius: 10px; max-width: 500px; margin-left: auto; margin-right: auto; }
     input, textarea, select { width: 100%; padding: 0.5rem; margin: 0.5rem 0; font-size: 1rem; }
     .section { margin-top: 3rem; text-align: center; }
     .gallery { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
     .gallery img { width: 100%; max-width: 200px; border-radius: 10px; }
     .faq { text-align: left; max-width: 600px; margin: 2rem auto; background: #fff; padding: 1rem; border-radius: 10px; }
     .faq h3 { margin-top: 1rem; }
-    .restock-form { background: #fff; padding: 1rem; border-radius: 10px; max-width: 500px; margin: 2rem auto; text-align: left; }
+    ul { max-width: 600px; margin: 1rem auto; text-align: left; line-height: 1.6; font-size: 1rem; }
     @media (max-width: 600px) {
       header h1 { font-size: 1.5rem; }
       .product-grid { grid-template-columns: 1fr; }
     }
+    a.social-link { color: #0af; text-decoration: none; margin: 0 0.5rem; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -34,11 +34,12 @@
     <h1>Trendora</h1>
     <p>Premium iPhone Cases for iPhone 12 to 16</p>
     <p><strong>All cases are currently SOLD OUT</strong></p>
-    <p><strong>🚚 Delivery Time:</strong> 1–2 days within Dubai</p>
-    <p><strong>🔔 247 people already signed up to be notified!</strong></p>
-    <p>New stock coming soon! Follow us on Instagram: <a href="https://instagram.com/trendora.dubai" target="_blank" style="color:#0af">@trendora.dubai</a></p>
+    <p>New stock coming soon! Follow us on Instagram and TikTok:</p>
+    <p>
+      <a href="https://instagram.com/trendorabusines" target="_blank" class="social-link">@trendorabusines</a> | 
+      <a href="https://tiktok.com/@trendorabusines" target="_blank" class="social-link">@trendorabusines</a>
+    </p>
     <p>Contact: 0585607799 | Email: tamimgamil100@gmail.com | WhatsApp: 0585607799 (for info only)</p>
-    <p><strong>Follow us:</strong> <a href="https://instagram.com/trendora.dubai" target="_blank" style="color:#0af">@trendora.dubai</a></p>
   </header>
 
   <div class="container">
@@ -159,12 +160,12 @@
       <h3>Is payment only in cash?</h3>
       <p>Yes, payment is cash on delivery.</p>
       <h3>How do I get notified when items restock?</h3>
-      <p>You can follow our Instagram @trendora.dubai or leave your email below.</p>
+      <p>You can follow our Instagram or TikTok @trendorabusines or leave your email below.</p>
     </div>
 
     <div class="section">
       <h2>Why Trendora?</h2>
-      <ul style="max-width:600px; margin:auto; font-size:1rem; line-height:1.6; text-align:left;">
+      <ul>
         <li>✔️ Stylish, premium-quality iPhone cases</li>
         <li>✔️ Fast cash-on-delivery within Dubai</li>
         <li>✔️ Friendly support via WhatsApp</li>
@@ -175,10 +176,10 @@
       <h2>Notify Me When Back in Stock</h2>
       <form action="mailto:tamimgamil100@gmail.com" method="POST" enctype="text/plain">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required />
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required />
 
         <button type="submit">Notify Me</button>
       </form>
